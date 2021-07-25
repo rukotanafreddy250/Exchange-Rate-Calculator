@@ -10,8 +10,8 @@ const swap = document.getElementById('swap');
 
 
 function calculate() {
-    // const currency_one = currencyEl_one.value;
-    // const currency_two = currencyEl_two.value;
+    const currency_one = currencyEl_one.value;
+    const currency_two = currencyEl_two.value;
     console.log(currencyEl_one);
     console.log(currencyEl_one);
 }
