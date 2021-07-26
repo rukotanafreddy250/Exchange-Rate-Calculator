@@ -12,20 +12,39 @@ const swap = document.getElementById('swap');
 function calculate() {
     const currency_one = currencyEl_one.value;
     const currency_two = currencyEl_two.value;
-    console.log(currencyEl_one);
-    console.log(currencyEl_one);
+    console.log(currency_one);
+    console.log(currency_two);
+
+    fetch(``)
+        .then(res => res.json())
+        .then(data => {
+            const rate = data.rates[currency_two];
+            console.log(rate);
+            rateEl.innerHTML = `1 ${currency_one} = ${rate} ${currency_two}`;
+            amountEl_two.value = (amountEl_one * rate.toFixed(2));
+        });
 }
 
+function swapCurrency() {
+    // const temp = currencyEl_one.value;
+    // currency_two = temp;
+    // const currency_one = currency_two;
+    const temp = currency_one.value;
+    currency_one.value = currencyEl_two.value;
+    currency_two.value = temp;
+    calculate();
+}
 
 
 currencyEl_one.addEventListener('change', calculate);
 amountEl_one.addEventListener('input', calculate);
 currencyEl_two.addEventListener('change', calculate);
 amountEl_two.addEventListener('input', calculate);
+rateEl.addEventListener('click', swapCurrency);
 
 
 
 
-// currency_two.addEventListener('input', );
-
+// currency_(two.addEventListener('input', );
 calculate();
+// swapCurrency();
