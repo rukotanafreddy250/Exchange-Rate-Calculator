@@ -24,7 +24,7 @@ function calculate() {
             amountEl_two.value = (amountEl_one * rate.toFixed(2));
         });
 }
-
+   
 function swapCurrency() {
     // const temp = currencyEl_one.value;
     // currency_two = temp;
@@ -33,7 +33,7 @@ function swapCurrency() {
     currency_one.value = currencyEl_two.value;
     currency_two.value = temp;
     calculate();
-}
+}  
 
 
 currencyEl_one.addEventListener('change', calculate);
